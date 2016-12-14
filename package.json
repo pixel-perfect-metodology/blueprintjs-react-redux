@@ -16,6 +16,7 @@
     "@types/redux": "^3.6.0",
     "@types/redux-thunk": "^2.1.32",
     "@types/ss-utils": "0.0.26",
+    "@types/tether": "^1.1.27",
     "@types/uuid": "^2.0.29",
     "awesome-typescript-loader": "^3.0.0-beta.9",
     "babel-core": "^6.18.2",
@@ -32,14 +33,14 @@
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",
     "ts-loader": "^1.2.2",
-    "typescript": "^2.0.10",
+    "typescript": "^2.1.4",
     "webpack": "^1.13.3",
     "webpack-dev-server": "^1.16.2",
     "webpack-hot-middleware": "^2.13.2",
     "webpack-notifier": "^1.4.1"
   },
   "scripts": {
-    "build": "webpack --config config/webpack.config.js",
+    "build": "webpack --config webpack.config.js",
     "start": "node server.js"
   },
   "repository": {
