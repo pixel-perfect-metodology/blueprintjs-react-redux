@@ -4,13 +4,13 @@
     "target": "es6",
     "moduleResolution": "node",
     "baseUrl": "src",
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": false,
     "noImplicitAny": false,
     "sourceMap": true,
     "outDir": "ts-build",
     "jsx": "preserve",
     "experimentalDecorators": true,
-    "strictNullChecks":false
+    "strictNullChecks": false
   },
   "exclude": [
     "node_modules"
