@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { ICounter, ICounterAction } from '../../models';
+import { ICounter, ICounterAction } from '..';
 import { ActionCreator } from 'redux';
 import { connect } from 'react-redux';
-import { increment, decrement } from '../../redux/modules/counter'
+import { increment, decrement } from '..';
+import { Route } from 'react-router';
 
 type CounterProps = {
     counter: ICounter,
@@ -38,7 +39,7 @@ class CounterComponent extends React.Component<CounterProps, CounterState> {
     }
 }
 
-export const Counter =  connect(
+export const Counter = connect(
     (state) => ({ counter: state.counter }),
     (dispatch) => (
         {
@@ -47,3 +48,6 @@ export const Counter =  connect(
         }
     )
 )(CounterComponent);
+
+
+export const CounterRoute = (<Route path="counter" component={Counter}></Route>);

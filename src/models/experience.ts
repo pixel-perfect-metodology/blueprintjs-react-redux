@@ -1,5 +1,5 @@
 export type IExperienceModel = {
-    Id: number,
+    Id: string,
     title: string,
     slug: string,
     category: string,

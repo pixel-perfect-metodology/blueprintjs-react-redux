@@ -4,7 +4,7 @@ import { configureStore } from '../../redux/store'
 import { syncHistoryWithStore } from 'react-router-redux';
 const { ReduxAsyncConnect } = require('redux-connect');
 import { Provider } from 'react-redux';
-import * as counter from '../../redux/modules/counter'
+import * as counter from '..'
 import * as note from '../../redux/modules/note'
 import * as todo from '../../redux/modules/todo'
 import * as experience from '../../redux/modules/experience'
@@ -12,16 +12,18 @@ import * as experience from '../../redux/modules/experience'
 
 import {
     Layout
-    , Experience
+    , ExperienceRoute
     , Profile
     , Dashbaord
+    , DashbaordRoute
     , Login
     , ForgetPassword
+    , CounterRoute
     , Counter
 } from '..';
 
 const store = configureStore(
-    browserHistory,
+    hashHistory,
     {
         counter: counter.InitialState,
         note: note.InitialState,
@@ -43,11 +45,10 @@ export class App extends React.Component<AppProps, AppState>{
                     <Route path="/" component={Layout}>
                         <IndexRoute component={Dashbaord}>
                         </IndexRoute>
-                        <Route path="dashboard" component={Dashbaord} />
+                        {DashbaordRoute}
+                        {CounterRoute}
+                        {ExperienceRoute}
                         <Route path="profile" component={Profile} />
-                        <Route path="counter" component={Counter} />
-                        <Route path="experience" component={Experience} />
-
                     </Route>
                     <Route path="login" component={Login} />
                     <Route path="forgetpassword" component={ForgetPassword} />

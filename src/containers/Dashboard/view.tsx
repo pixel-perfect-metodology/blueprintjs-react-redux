@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Route } from 'react-router';
 import { Todo, Note } from '../../components'
 
 type DashbaordProps = {}
@@ -26,3 +27,6 @@ export class Dashbaord extends React.Component<DashbaordProps, DashbaordState> {
         );
     }
 }
+
+
+export const DashbaordRoute = (<Route path="dashboard" component={Dashbaord} />);
