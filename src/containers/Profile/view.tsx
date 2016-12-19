@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Route } from 'react-router';
 
 
 type ProfileProps = {}
@@ -14,3 +15,6 @@ export class Profile extends React.Component<ProfileProps, ProfileState> {
         );
     }
 }
+
+
+export const ProfileRoute = (<Route path="profile" component={Profile} />);

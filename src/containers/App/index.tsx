@@ -13,7 +13,7 @@ import * as experience from '../../redux/modules/experience'
 import {
     Layout
     , ExperienceRoute
-    , Profile
+    , ProfileRoute
     , Dashbaord
     , DashbaordRoute
     , Login
@@ -48,7 +48,7 @@ export class App extends React.Component<AppProps, AppState>{
                         {DashbaordRoute}
                         {CounterRoute}
                         {ExperienceRoute}
-                        <Route path="profile" component={Profile} />
+                        {ProfileRoute}
                     </Route>
                     <Route path="login" component={Login} />
                     <Route path="forgetpassword" component={ForgetPassword} />
