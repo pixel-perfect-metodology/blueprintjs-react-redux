@@ -4,6 +4,7 @@ import { ActionCreator } from 'redux';
 import { connect } from 'react-redux';
 import { increment, decrement } from '..';
 import { Route } from 'react-router';
+import { Profile } from '..';
 
 type CounterProps = {
     counter: ICounter,
@@ -50,4 +51,4 @@ export const Counter = connect(
 )(CounterComponent);
 
 
-export const CounterRoute = (<Route path="counter" component={Counter}></Route>);
+export const CounterRoute = (<Route path="counter" component={Profile} />);
