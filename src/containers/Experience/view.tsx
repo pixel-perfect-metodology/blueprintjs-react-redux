@@ -6,7 +6,7 @@ import { IExperience, IExperienceAction } from '.';
 import { create, update, read, _delete, change } from '.';
 import { Editor } from 'react-draft-wysiwyg';
 import { EditorState, ContentState, convertFromHTML, convertToRaw } from 'draft-js';
-import { ExperienceFormComponent } from './experience-form';
+import { ExperienceForm } from './experience-form';
 import { Route } from 'react-router';
 
 
@@ -58,7 +58,7 @@ export class ExperienceComponent extends React.Component<ExperienceProps, Experi
                         </div>
                     </div>
                     <div className="col-xs-9">
-                        <ExperienceFormComponent experience={experience} create={create} update={update} read={read} change={change} _delete={_delete} />
+                        <ExperienceForm />
                     </div>
                 </div>
 
