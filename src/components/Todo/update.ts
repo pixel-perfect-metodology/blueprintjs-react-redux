@@ -1,4 +1,4 @@
-import { ITodoModel, ITodoAction, ITodo, ITodoFilter } from '../../../models'
+import { ITodoModel, ITodoAction, ITodo, ITodoFilter } from './model'
 import * as _ from 'lodash';
 import * as uuid from 'uuid';
 

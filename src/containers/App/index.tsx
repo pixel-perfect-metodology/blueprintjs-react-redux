@@ -4,31 +4,23 @@ import { configureStore } from '../../redux/store'
 import { syncHistoryWithStore } from 'react-router-redux';
 const { ReduxAsyncConnect } = require('redux-connect');
 import { Provider } from 'react-redux';
-import * as counter from '..'
-import * as note from '../../redux/modules/note'
-import * as todo from '../../redux/modules/todo'
-import * as experience from '../../redux/modules/experience'
-
-
-import {
-    Layout
-    , ExperienceRoute
-    , ProfileRoute
-    , Dashbaord
-    , DashbaordRoute
-    , Login
-    , ForgetPassword
-    , CounterRoute
-    , Counter
-} from '..';
+import { Layout } from '../layout';
+import { DashbaordRoute, Dashbaord } from '../dashboard';
+import { ProfileRoute } from '../profile';
+import { InitialState as ToDoInitialState } from '../../components/todo'
+import { InitialState as NoteInitialState } from '../../components/note'
+import { ExperienceRoute, InitialState as ExperienceInitialState } from '../experience'
+import { CounterRoute, InitialState as CounterInitialState } from '../counter';
+import { Login } from '../login'
+import { ForgetPassword } from '../forgetpassword'
 
 const store = configureStore(
     hashHistory,
     {
-        counter: counter.InitialState,
-        note: note.InitialState,
-        todo: todo.InitialState,
-        experience: experience.InitialState
+        counter: CounterInitialState,
+        note: NoteInitialState,
+        todo: ToDoInitialState,
+        experience: ExperienceInitialState
     }
 );
 const history = syncHistoryWithStore(hashHistory, store);

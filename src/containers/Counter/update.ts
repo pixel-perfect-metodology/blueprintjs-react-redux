@@ -1,9 +1,10 @@
-import { ICounter, ICounterAction } from '..'
+import { ICounter, ICounterAction } from './model'
 import * as _ from 'lodash';
 
 export const InitialState: ICounter = {
     count: 0
 }
+
 
 export function counterReducer(state = InitialState, action: ICounterAction) {
     switch (action.type) {

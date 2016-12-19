@@ -1,6 +1,6 @@
-import { IExperience, IExperienceAction, IExperienceModel } from '../../../models'
+import { IExperience, IExperienceAction, IExperienceModel } from '.'
 import * as _ from 'lodash';
-import * as lib from '../../../lib'
+import * as lib from './../../lib'
 import * as uuid from 'uuid';
 
 export const InitialState: IExperience = {
@@ -16,8 +16,9 @@ export const InitialState: IExperience = {
     isDelete: false
 };
 
+
+
 export const experienceReducer = (state = InitialState, action: IExperienceAction) => {
-    console.log(action.payload);
     switch (action.type) {
         case 'CREATE_EXP':
             let new1 = {

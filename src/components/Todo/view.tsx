@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { ActionCreator } from 'redux';
-import { ITodoModel, ITodoAction, ITodo, ITodoFilter } from '../../models';
-import { read, create, update, _delete, updatetodo, filterupdate } from '../../redux/modules/todo';
+import { ITodoModel, ITodoAction, ITodo, ITodoFilter } from './model';
+import { read, create, update, _delete, updatetodo, filterupdate } from './update';
 import * as uuid from 'uuid';
 import { Checkbox } from '@blueprintjs/core'
 

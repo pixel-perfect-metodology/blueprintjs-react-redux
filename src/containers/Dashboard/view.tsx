@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Route } from 'react-router';
-import { Todo, Note } from '../../components'
+import { Note } from '../../components/note'
+import { Todo } from '../../components/todo'
 
 type DashbaordProps = {}
 

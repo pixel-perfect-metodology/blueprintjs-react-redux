@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Editor } from 'react-draft-wysiwyg';
 import { EditorState, ContentState, convertFromHTML, convertToRaw } from 'draft-js';
-import { IExperience, IExperienceAction } from '../../models';
+import { IExperience, IExperienceAction } from '.';
 import { connect } from 'react-redux';
 import { ActionCreator } from 'redux';
-import { create, update, read, _delete, change } from '../../redux/modules/experience';
+import { create, update, read, _delete, change } from '.';
 
 
 
@@ -26,61 +26,61 @@ export class ExperienceFormComponent extends React.Component<experienceFormProps
         return (
             <div>
                 <input type="hidden" value={experience.current.Id} />
-                
-                    <input className="pt-input pt-fill" type="text"
-                        placeholder="Title" dir="auto"
-                        value={experience.current.title}
-                        onChange={(e) =>
-                            change({
-                                ...experience.current,
-                                title: e.currentTarget.value
-                            })
-                        }
-                        />
-                    <input className="pt-input pt-fill" type="text"
-                        placeholder="Slug" dir="auto"
-                        value={experience.current.slug}
-                        onChange={(e) => change({
-                            ...experience.current,
-                            slug: e.currentTarget.value
-                        })}
-                        />
-                    <input className="pt-input pt-fill" type="text"
-                        placeholder="Category" dir="auto"
-                        value={experience.current.category}
-                        onChange={(e) => change({
-                            ...experience.current,
-                            category: e.currentTarget.value
-                        })}
-                        />
-                    <Editor
-                        toolbarClassName="home-toolbar"
-                        wrapperClassName="home-wrapper"
-                        editorClassName="home-editor"
-                        onChange={(e) => {
-                            change({
-                                ...experience.current,
-                                body: 'kunjan'
-                            })
-                            this.setState({ editorState: e });
-                        } }
 
-                        />
+                <input className="pt-input pt-fill" type="text"
+                    placeholder="Title" dir="auto"
+                    value={experience.current.title}
+                    onChange={(e) =>
+                        change({
+                            ...experience.current,
+                            title: e.currentTarget.value
+                        })
+                    }
+                    />
+                <input className="pt-input pt-fill" type="text"
+                    placeholder="Slug" dir="auto"
+                    value={experience.current.slug}
+                    onChange={(e) => change({
+                        ...experience.current,
+                        slug: e.currentTarget.value
+                    })}
+                    />
+                <input className="pt-input pt-fill" type="text"
+                    placeholder="Category" dir="auto"
+                    value={experience.current.category}
+                    onChange={(e) => change({
+                        ...experience.current,
+                        category: e.currentTarget.value
+                    })}
+                    />
+                <Editor
+                    toolbarClassName="home-toolbar"
+                    wrapperClassName="home-wrapper"
+                    editorClassName="home-editor"
+                    onChange={(e) => {
+                        change({
+                            ...experience.current,
+                            body: 'kunjan'
+                        })
+                        this.setState({ editorState: e });
+                    } }
 
-                    <button type="button" className="pt-button pt-intent-success"
-                        disabled={!experience.isValid}
-                        onClick={(e) => {
-                            if (experience.current.Id === '')
-                                create(experience.current);
-                            else
-                                update(experience.current);
-                        } }
-                        >Save</button>
-                    <button type="button" className="pt-button pt-intent-danger"
-                        disabled={!experience.isDelete}
-                        onClick={(e) => _delete(experience.current.Id)}
-                        >Delete</button>
-                </div>
+                    />
+
+                <button type="button" className="pt-button pt-intent-success"
+                    disabled={!experience.isValid}
+                    onClick={(e) => {
+                        if (experience.current.Id === '')
+                            create(experience.current);
+                        else
+                            update(experience.current);
+                    } }
+                    >Save</button>
+                <button type="button" className="pt-button pt-intent-danger"
+                    disabled={!experience.isDelete}
+                    onClick={(e) => _delete(experience.current.Id)}
+                    >Delete</button>
+            </div>
         );
     }
 }

@@ -1,4 +1,4 @@
-import { INote, INoteAction } from '../../../models'
+import { INote, INoteAction } from './model'
 import * as _ from 'lodash';
 
 export const InitialState: INote = {
@@ -16,9 +16,9 @@ export const noteReducer = (state = InitialState, action: INoteAction) => {
     }
 }
 
-export const update = (text : string) : INoteAction => {
+export const update = (text: string): INoteAction => {
     return {
         type: 'UPDATE_NOTE',
-        payload : text
+        payload: text
     }
 }
