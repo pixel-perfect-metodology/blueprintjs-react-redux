@@ -1,5 +1,4 @@
 // const appConfig = require('../../../config/main');
-import { ICounter } from './../containers'
 import { routerMiddleware } from 'react-router-redux'
 import { Middleware, Store, createStore, applyMiddleware, compose } from 'redux';
 import { } from 'redux-thunk';
