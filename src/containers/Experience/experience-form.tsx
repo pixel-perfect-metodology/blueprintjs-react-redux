@@ -18,7 +18,9 @@ type experienceFormProps = {
     change: ActionCreator<IExperienceAction>
 }
 
-type experienceFormState = {}
+type experienceFormState = {
+    editorState: any
+}
 
 export class ExperienceFormComponent extends React.Component<experienceFormProps, experienceFormState> {
     render() {

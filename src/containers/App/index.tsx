@@ -7,8 +7,8 @@ import { Provider } from 'react-redux';
 import { Layout } from '../layout';
 import { DashbaordRoute, Dashbaord } from '../dashboard';
 import { ProfileRoute } from '../profile';
-import { InitialState as ToDoInitialState } from '../../components/todo'
-import { InitialState as NoteInitialState } from '../../components/note'
+import { InitialState as ToDoInitialState } from '../todo'
+import { InitialState as NoteInitialState } from '../note'
 import { ExperienceRoute, InitialState as ExperienceInitialState } from '../experience'
 import { CounterRoute, InitialState as CounterInitialState } from '../counter';
 import { Login } from '../login'

@@ -13,7 +13,7 @@ type NoteProps = {
 
 type NoteState = void
 
-export class NoteComponent extends React.Component<NoteProps, NoteState> {
+export class NoteComponent extends React.Component<any, any> {
     render() {
         const {note, update} = this.props;
         return (

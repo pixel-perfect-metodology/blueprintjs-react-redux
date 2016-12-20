@@ -14,7 +14,6 @@ export const InitialState: ITodo = {
 };
 
 export const todoReducer = (state = InitialState, action: ITodoAction) => {
-    console.log(action.type);
     switch (action.type) {
         case 'READ_TODO':
             return state;

@@ -1,7 +1,7 @@
 import { IExperience } from '../containers/experience'
 import { ICounter } from '../containers/counter'
-import { ITodo } from '../components/todo'
-import { INote } from '../components/note'
+import { ITodo } from '../containers/todo'
+import { INote } from '../containers/note'
 
 
 export type IStore = {

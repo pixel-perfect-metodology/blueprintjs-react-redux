@@ -38,7 +38,7 @@ export class ExperienceComponent extends React.Component<ExperienceProps, Experi
                 <div className="row">
                     <div className="col-xs-3">
                         <div className="col-xs-12">
-                            <button type="button" className="pt-button pt-icon-add" >Button</button>
+                            <Link to="experience/a">Add</Link>
                         </div>
                         <div className="col-xs-12">
                             {experience.list.length}
@@ -58,7 +58,7 @@ export class ExperienceComponent extends React.Component<ExperienceProps, Experi
                         </div>
                     </div>
                     <div className="col-xs-9">
-                        <ExperienceForm />
+                        {this.props.children}
                     </div>
                 </div>
 
@@ -82,5 +82,5 @@ export const Experience = connect(
 
 
 export const ExperienceRoute = (<Route path="experience" component={Experience} >
-    <Route path="experience/{:id}" component={Experience} />
+    <Route path=":id" component={ExperienceForm} />
 </Route>);
