@@ -32,6 +32,12 @@ export const experienceReducer = (state = InitialState, action: IExperienceActio
             };
         case 'READ_EXP':
             let r = _.find(state.list, (a) => { return a.Id === (<string>action.payload) });
+            if (!r) {
+                return {
+                    ...state,
+                    current: InitialState.current
+                }
+            }
             return {
                 ...state,
                 current: r

@@ -4,7 +4,7 @@ import { EditorState, ContentState, convertFromHTML, convertToRaw } from 'draft-
 import { IExperience, IExperienceAction } from '.';
 import { connect } from 'react-redux';
 import { ActionCreator } from 'redux';
-import { create, update, read, _delete, change } from '.';
+import { create, update, read, _delete, change } from './update';
 
 
 
@@ -16,6 +16,7 @@ type experienceFormProps = {
     read: ActionCreator<IExperienceAction>
     _delete: ActionCreator<IExperienceAction>
     change: ActionCreator<IExperienceAction>
+    params: any
 }
 
 type experienceFormState = {
@@ -23,8 +24,12 @@ type experienceFormState = {
 }
 
 export class ExperienceFormComponent extends React.Component<experienceFormProps, experienceFormState> {
+    constructor(props) {
+        super(props);
+    }
     render() {
         const {experience, create, update, read, _delete, change } = this.props;
+
         return (
             <div>
                 <input type="hidden" value={experience.current.Id} />

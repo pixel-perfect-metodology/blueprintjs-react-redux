@@ -38,19 +38,25 @@ export class ExperienceComponent extends React.Component<ExperienceProps, Experi
                 <div className="row">
                     <div className="col-xs-3">
                         <div className="col-xs-12">
-                            <Link to="experience/a">Add</Link>
+                            <Link to="experience/0" onClick={(e) => {
+                                read(0);
+                            } }>Add</Link>
                         </div>
                         <div className="col-xs-12">
                             {experience.list.length}
                             <ul>
-                                {experience.list.map((e) =>
-                                    (<li key={e.Id}
+                                {experience.list.map((ex) =>
+                                    (<li key={ex.Id}
                                         onClick={(e) => {
                                             read(e.currentTarget.id);
                                         } }
                                         >
-                                        <Link to={`experience/${e.Id}`}>
-                                            {e.title}
+                                        <Link to={`experience/${ex.Id}`} onClick={
+                                            (e) => {
+                                                read(`${ex.Id}`);
+                                            }
+                                        }>
+                                            {ex.title}
                                         </Link>
                                     </li>)
                                 )}
