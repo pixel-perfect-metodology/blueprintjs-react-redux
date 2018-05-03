@@ -5,7 +5,7 @@ import { syncHistoryWithStore } from 'react-router-redux';
 const { ReduxAsyncConnect } = require('redux-connect');
 import { Provider } from 'react-redux';
 import { Layout } from '../layout';
-import { DashbaordRoute, Dashbaord } from '../dashboard';
+import { DashboardRoute, Dashboard } from '../dashboard';
 import { ProfileRoute } from '../profile';
 import { InitialState as ToDoInitialState } from '../todo'
 import { InitialState as NoteInitialState } from '../note'
@@ -35,9 +35,9 @@ export class App extends React.Component<AppProps, AppState>{
             <Provider store={store} key="provider">
                 <Router history={history} render={connectedCmp}>
                     <Route path="/" component={Layout}>
-                        <IndexRoute component={Dashbaord}>
+                        <IndexRoute component={Dashboard}>
                         </IndexRoute>
-                        {DashbaordRoute}
+                        {DashboardRoute}
                         {CounterRoute}
                         {ExperienceRoute}
                         {ProfileRoute}
